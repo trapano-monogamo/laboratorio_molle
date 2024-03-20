@@ -6,12 +6,13 @@ import numpy as np
 
 
 def LinearRegression(
-    xValues: Tuple[float],
-    yValues: Tuple[float],
-    xErrors: Tuple[float],
-    yErrors: Tuple[float],
+    xValues: list,
+    yValues: list,
+    xErrors: list,
+    yErrors: list,
+    k_test: float
 ) -> Dict[str, float]:
-    __check_data(xValues, yValues, xErrors, yErrors)
+    # __check_data(xValues, yValues, xErrors, yErrors)
 
     xValues = np.array(xValues)
     yValues = np.array(yValues)
@@ -20,7 +21,7 @@ def LinearRegression(
 
     # ! this formulas are wrong, I cannot calculate them in a loop
 
-    sigma_yi = np.sqrt(np.square(yErrors) + (coeff**2) * np.square(xErrors))
+    sigma_yi = np.sqrt(np.square(yErrors) + (k_test**2) * np.square(xErrors))
     sigma_y = np.sum(sigma_yi)
 
     len_data = len(xValues)
@@ -52,7 +53,7 @@ def LinearRegression(
         "CoefficientError": coeffErr,
         "InterceptError": interceptErr,
         "Sigmay": sigma_y,
-        "Sigma_yi": sigma_yi,
+        # "Sigma_yi": sigma_yi,
     }
 
 
