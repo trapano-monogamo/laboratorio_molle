@@ -1,8 +1,0 @@
-sonar_non-pretensionata_dinamico - su excel in basso a dx (molla 2)
-masse:
-1
-2
-3
-4
-0
-
