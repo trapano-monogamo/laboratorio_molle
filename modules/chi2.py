@@ -5,7 +5,7 @@ import numpy as np
 # ! should add a check function
 
 
-def chi2(
+def calculate_chi2(
     observed: Tuple[float],
     expected: Tuple[float],
     sigma_y: Tuple[float],
@@ -37,7 +37,7 @@ def chi2(
 def main():
     exp = [2.01, 4.02, 6.03, 8.04]
     obs = [2, 4, 6.1, 8]
-    print(chi2(exp, obs, [0.2836, 1.2225, 0.5016, 0.4477], len(exp) - 2))
+    print(calculate_chi2(exp, obs, [0.2836, 1.2225, 0.5016, 0.4477], len(exp) - 2))
 
 
 if __name__ == "__main__":
